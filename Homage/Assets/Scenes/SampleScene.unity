@@ -5419,7 +5419,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 5
-  m_PreviewTimeScale: 1
+  m_PreviewTimeScale: 0
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -5436,7 +5436,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.57540894
+        time: 0.27114868
         value: 0
         inSlope: 0
         outSlope: 0
@@ -5510,7 +5510,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8f4aa04bc20ceb24c92e2393823d0704, type: 2}
+  - {fileID: 2100000, guid: 33825c1e0bec5dd49a13a94037277917, type: 2}
   - {fileID: 2100000, guid: bb9e7a314c944ca43bcca0a95a06ca66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -5553,7 +5553,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -6140,7 +6140,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.05
       minScalar: 0
       maxCurve:
         serializedVersion: 2
