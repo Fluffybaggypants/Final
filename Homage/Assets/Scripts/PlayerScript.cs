@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
      public float Speed = 5f;
      public float restartDelay = 1f;
     public ParticleSystem PS;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RB.AddForce(new Vector2(1000, 0f)* Time.deltaTime);
+        RB.velocity = (new Vector2(10,RB.velocity.y));
+
         //transform.position += transform.right * Speed * Time.deltaTime;
        /* Vector2 vel = RB.velocity;
         RB.AddForce(vel.x * Time.deltaTime,0,0);*/
