@@ -10,7 +10,8 @@ public Rigidbody2D RB;
  public float Speed = 5f;
  public float restartDelay = 1f;
 public ParticleSystem PS;
-
+    public bool OnGround = true;
+    public bool Movement = false;
 
 // Start is called before the first frame update
 void Start()
@@ -21,6 +22,7 @@ void Start()
 // Update is called once per frame
 void Update()
 {
+        if (Movement == true)
     RB.velocity = (new Vector2(10,RB.velocity.y));
 
     //transform.position += transform.right * Speed * Time.deltaTime;
@@ -28,7 +30,7 @@ void Update()
     RB.AddForce(vel.x * Time.deltaTime,0,0);*/
    
   //transform.position = new Vector3(target.position.x, 0, transform.position.z);
-    if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) &&OnGround)
     {
         if (Mathf.Sign(RB.gravityScale) == 1)
         {
@@ -52,10 +54,16 @@ void Restart()
 
 void OnCollisionEnter2D(Collision2D other)
 {
+        if (other.gameObject.tag =="Grounds")
+        {
+            OnGround = true;
+        }
     if (other.gameObject.name == "Spikes")
     {
+            Movement = false;
          Invoke("Restart", restartDelay);
         PS.Emit(10);
+            RB.velocity *= .25f;
         //Destroy(gameObject);
     }
     if (other.gameObject.name == "Finished")
@@ -63,4 +71,11 @@ void OnCollisionEnter2D(Collision2D other)
 
     }
 }
+    void OnCollisionExit2D( Collision2D other)
+    {
+        if (other.gameObject.tag == "Grounds")
+        {
+            OnGround = false;
+        }
+    }
 }
