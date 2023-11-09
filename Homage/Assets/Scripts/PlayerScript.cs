@@ -39,6 +39,10 @@ void Update()
             RB.gravityScale = Mathf.Abs(RB.gravityScale);
         }
     }
+    if (transform.position.y <= -5 || transform.position.y >= 5)
+        {
+            Invoke("Restart", restartDelay);
+        }
 
 }
 void Restart()
