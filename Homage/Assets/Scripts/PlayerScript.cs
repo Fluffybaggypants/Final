@@ -58,7 +58,7 @@ void OnCollisionEnter2D(Collision2D other)
         {
             OnGround = true;
         }
-    if (other.gameObject.name == "Spikes")
+    if (other.gameObject.tag == "Obstacles")
     {
             Movement = false;
          Invoke("Restart", restartDelay);
