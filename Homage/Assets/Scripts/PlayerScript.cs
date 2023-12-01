@@ -13,6 +13,8 @@ public ParticleSystem PS;
     public bool OnGround = true;
     public bool Movement = false;
 
+    public GameObject Image;
+    public GameObject Text;
 // Start is called before the first frame update
 void Start()
 {
@@ -41,9 +43,9 @@ void Update()
             RB.gravityScale = Mathf.Abs(RB.gravityScale);
         }
     }
-    if (transform.position.y <= -5 || transform.position.y >= 5)
+    if (transform.position.y <= -20 || transform.position.y >= 20)
         {
-            Invoke("Restart", restartDelay);
+            Invoke("Restart", 0);
         }
 
 }
@@ -68,8 +70,10 @@ void OnCollisionEnter2D(Collision2D other)
     }
     if (other.gameObject.name == "Finished")
     {
-
-    }
+            Text.SetActive(true);
+            Image.SetActive(true);
+            Movement = false;
+        }
 }
     void OnCollisionExit2D( Collision2D other)
     {
