@@ -20,4 +20,9 @@ public class Title_Screen : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void Quit()
+    {
+        Debug.Log("QUIT");
+        Application.Quit();
+    }
 }

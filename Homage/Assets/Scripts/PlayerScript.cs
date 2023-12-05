@@ -53,6 +53,10 @@ void Restart()
 {
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 }
+    void nextlevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
 void OnCollisionEnter2D(Collision2D other)
 {
@@ -73,9 +77,11 @@ void OnCollisionEnter2D(Collision2D other)
             Text.SetActive(true);
             Image.SetActive(true);
             Movement = false;
+            Invoke("nextlevel", restartDelay);
         }
+    
 }
-    void OnCollisionExit2D( Collision2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.tag == "Grounds")
         {
