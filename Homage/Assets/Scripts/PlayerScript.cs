@@ -37,7 +37,8 @@ void Update()
         if (Mathf.Sign(RB.gravityScale) == 1)
         {
             RB.gravityScale = - RB.gravityScale;
-        }
+                RB.velocity = (new Vector2(10, 0));
+            }
         else 
         {
             RB.gravityScale = Mathf.Abs(RB.gravityScale);
@@ -53,6 +54,10 @@ void Restart()
 {
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 }
+    void nextlevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
 void OnCollisionEnter2D(Collision2D other)
 {
@@ -73,9 +78,11 @@ void OnCollisionEnter2D(Collision2D other)
             Text.SetActive(true);
             Image.SetActive(true);
             Movement = false;
+            Invoke("nextlevel", restartDelay);
         }
+    
 }
-    void OnCollisionExit2D( Collision2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.tag == "Grounds")
         {
