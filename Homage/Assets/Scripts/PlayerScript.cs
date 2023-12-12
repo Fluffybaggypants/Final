@@ -37,8 +37,8 @@ void Update()
         if (Mathf.Sign(RB.gravityScale) == 1)
         {
             RB.gravityScale = - RB.gravityScale;
-                RB.velocity = (new Vector2(10, 0));
-            }
+             //   RB.velocity = (new Vector2(10, 0));
+        }
         else 
         {
             RB.gravityScale = Mathf.Abs(RB.gravityScale);
