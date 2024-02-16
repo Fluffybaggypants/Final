@@ -60,8 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
-    <Compile Include="Assets\DeathZone.cs" />
     <Compile Include="Assets\Scripts\Title_Screen.cs" />
+    <Compile Include="Assets\Scripts\DeathZone.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Saw.cs" />
   </ItemGroup>
